@@ -5,6 +5,7 @@ export class LoginPage {
   readonly usernameInput: Locator;
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
+  readonly errorBanner: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -13,6 +14,7 @@ export class LoginPage {
     this.passwordInput = page.getByRole('textbox', { name: 'Password' });
     // input[type=submit] maps to ARIA button role — getByRole resolves correctly
     this.loginButton = page.getByRole('button', { name: 'Login' });
+    this.errorBanner = page.locator('[data-test="error"]');
   }
 
   async goto(): Promise<void> {

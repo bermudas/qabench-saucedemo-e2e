@@ -42,6 +42,6 @@ test.describe('TC-001 @TC-001 — Login valid credentials', () => {
     // No error banner visible
     // The error container is always in the DOM but hidden; using .toHaveCount(0)
     // would be misleading — instead confirm no error text is displayed
-    await expect(page.locator('[data-test="error"]')).toHaveCount(0);
+    await expect(loginPage.errorBanner).toHaveCount(0);
   });
 });
